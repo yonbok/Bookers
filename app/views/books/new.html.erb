@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <
+    <meta charset="UTF-8">
+    <title>Bookers</title>
   </head>
+
+  <body>
+    <table>
+     <tablehead>
+       <tr>
+         <th>Title</th>
+         <th>Body</th>
+         <th colspan="3"></th>
+       </tr>
+     </tablehead>
+
+    </table>
+
+  </body>
+
 </html>
- 
-
-<h1>Books</h1>
-
-<h2>New book</h2>
 
 
-<%= form_with model: Book.new do |f| %>
+
+<%= form_with model: @book, url: '/books', method: :post do |f| %>
    <h4>Title</h4>
    <%= f.text_field :title %>
 
