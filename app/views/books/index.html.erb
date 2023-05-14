@@ -1,9 +1,27 @@
+<h1>Books</h1>
+ <h4>本のタイトル</h4>
+ <h4>感想</h4>
+
+ <h2>New book</h2>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this book from being saved:
+  <ul>
+      <% @book.errors.full_massages.each do |message| %>
+       <li><%= message %></li>
+      <% end%>
+  </ul>
+ <% end %>
+
+
+
 <%= @books.each do |book| %>
 
-<h4>Title:</h4>
+<h4>本のタイトル:</h4>
 <span><%= book.title %></span>
 
-<h4>Body:</h4>
-<span><%= book.body %></span>
+<h4>感想:</h4>
+<span>
+  <%= link_to book.title, book_path(book.id) %>
+</span>
 
 <% end %>

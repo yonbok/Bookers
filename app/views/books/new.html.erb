@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet">
+    <link rel="stylesheet" href="books.scss">
     <title>Bookers</title>
   </head>
 
@@ -12,8 +12,8 @@
     <table>
      <tablehead>
        <tr>
-         <th>Title</th>
-         <th>Body</th>
+         <th>本のタイトル</th>
+         <th>感想</th>
          <th colspan="3"></th>
        </tr>
      </tablehead>
@@ -36,7 +36,7 @@
 
       <tr>
         <tb>入門Git</tb>
-        <tb>	gitについての基本操作から内部構造まで解説してくれます</tb>
+        <tb>gitについての基本操作から内部構造まで解説してくれます</tb>
       </tr>
 
       </tablebody>
@@ -49,10 +49,10 @@
 
 
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
-   <h4>Title</h4>
+   <h4>本のタイトル</h4>
    <%= f.text_field :title %>
 
-   <h4>Body</h4>
+   <h4>感想</h4>
    <%= f.text_field :body %>
 
    <%= f.submit 'Create Book' %>
