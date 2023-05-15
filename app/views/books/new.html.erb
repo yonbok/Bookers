@@ -7,6 +7,7 @@
   </head>
 
   <body>
+    <p id="notice"></p>
     <h1>Books</h1>
 
     <table>
@@ -20,48 +21,75 @@
 
      <tablebody>
       <tr>
-        <tb>リーダブルコード</tb>
-        <tb>より良いコードを書くためのシンプルで実践的なテクニック</tb>
-        <tb><
+        <td>リーダブルコード</tb>
+        <td>より良いコードを書くためのシンプルで実践的なテクニック</tb>
+        <td><a class="show_149550" href="/books/149550">Show</a></td>
+        <td><a class="edit_149550" href="/books/149550/edit">Edit</a></td>
+        <td><a date-confirm="Are you sure?" class="destroy_149550" rel="nofollow" date-method="delete" href="/books/14950">Destroy</a></td>
+        <td><a class=</td>
+        <td>
 
       <tr>
-        <tb>トラブル知らずのシステム設計</tb>
-        <tb>システム設計の要点を図解で説明してくれます</tb>
+        <td>トラブル知らずのシステム設計</td>
+        <td>システム設計の要点を図解で説明してくれます</td>
+        <td><a class="show_149551" href="/books/149551">Show</a></td>
+        <td><a class="edit_149551" href="/books/149551/edit">Edit</a></td>
+        <td><a date-confirm="Are you sure?" class="destroy_149551" rel="nofollow" date-method="delete" href="/books/14951">Destroy</a></td>
       </tr>
 
       <tr>
-        <tb>たのしいRuby</tb>
-        <tb>Rubyの入門におすすめです</tb>
+        <td>たのしいRuby</td>
+        <td>Rubyの入門におすすめです</td>
+        <td><a class="show_149552" href="/books/149552">Show</a></td>
+        <td><a class="edit_149552" href="/books/149552/edit">Edit</a></td>
+        <td><a date-confirm="Are you sure?" class="destroy_149552" rel="nofollow" date-method="delete" href="/books/149552">Destroy</a></td>
       </tr>
 
       <tr>
-        <tb>入門Git</tb>
-        <tb>gitについての基本操作から内部構造まで解説してくれます</tb>
+        <td>入門Git</td>
+        <td>gitについての基本操作から内部構造まで解説してくれます</td>
+        <td><a class="show_149553" href="/books/149553">Show</a></td>
+        <td><a class="edit_149553" href="/books/149553/edit">Edit</a></td>
+        <td><a date-confirm="Are you sure?" class="destroy_149553" rel="nofollow" date-method="delete" href="/books/14953">Destroy</a></td>
       </tr>
 
       <tr>
-        <tb>アルゴリズム図鑑</tb>
-        <tb>アルゴリズムについてカラーイラストでしっかり解説してくれます</tb>
+        <td>アルゴリズム図鑑</td>
+        <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
+        <td><a class="show_149554" href="/books/149554">Show</a></td>
+        <td><a class="edit_149554" href="/books/149554/edit">Edit</a></td>
+        <td><a date-confirm="Are you sure?" class="destroy_149554" rel="nofollow" date-method="delete" href="/books/14954">Destroy</a></td>
       </tr>
 
       <tr>
-         <tb>達人プログラマー</tb>
-         <tb>プログラマ入門者は必読！</tb>
+         <td>達人プログラマー</td>
+         <td>プログラマ入門者は必読！</td>
+         <td><a class="show_149555" href="/books/149555">Show</a></td>
+         <td><a class="edit_149555" href="/books/149555/edit">Edit</a></td>
+         <td><a date-confirm="Are you sure?" class="destroy_149555" rel="nofollow" date-method="delete" href="/books/14955">Destroy</a></td>
       </tr>
 
       <tr>
-         <tb>データベース実践入門</tb>
-         <tb>効率的なSQL文を教えてくれます</tb>
+         <td>データベース実践入門</td>
+         <td>効率的なSQL文を教えてくれます</td>
+         <td><a class="show_149556" href="/books/149556">Show</a></td>
+        <td><a class="edit_149556" href="/books/149556/edit">Edit</a></td>
+        <td><a date-confirm="Are you sure?" class="destroy_149556" rel="nofollow" date-method="delete" href="/books/14956">Destroy</a></td>
       </tr>
       </tablebody>
     </table>
 
-    <form>
-        <p><h5>本のタイトル</h5></p>
-        <p><input type="text"></p>
-        <p><h5>感想</h5></p>
-        <p><textarea></textarea></p>
-        <p><input type="submit" value="Create Book"></p>
+    <h2>New book</h2>
+    <form class="new_book" id="new_book" action="/books" sccept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="9riw3eBgW4vEEfayGZtA2Usmazv3eBI3AzZGVnW8vnseng9o2gm5lnH8gmdEZYLPi/J41Hr90INi1pa9Zveo7w==" />
+       <%= form_with model: @book, url: '/books', method: :post do |f| %>
+        <h4>本のタイトル</h4>
+        <%= f.text_field :title %>
+
+        <h4>感想</h4>
+        <%= f.text_field :body %>
+
+        <%= f.submit 'Create Book' %>
+      <% end %>
     </form>
 
   </body>

@@ -1,27 +1,60 @@
-<h1>Books</h1>
- <h4>本のタイトル</h4>
- <h4>感想</h4>
+<!--<!DOCTYPE html>-->
+<!--<html lang="ja">-->
+<!--  <head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link rel="stylesheet" href="books.scss">-->
+<!--    <title>Bookers</title>-->
+<!--  </head>-->
 
- <h2>New book</h2>
+
+    <p id="notice"></p>
+    <h1>Books</h1>
+
+     <table>
+      <tablehead>
+       <tr>
+         <th>本のタイトル</th>
+         <th>感想</th>
+         <th colspan="3"></th>
+       </tr>
+     </tablehead>
+
+     <tablebody>
+  <% @books.each do |book| %>
+      <tr>
+        <td></tb>
+        <td></tb>
+        <td><a class="show_1" href="/books/1">Show</a></td>
+        <td><a class="edit_1" href="/books/1/edit">Edit</a></td>
+        <td><a date-confirm="Are you sure?" class="destroy_1" rel="nofollow" date-method="delete" href="/books/1">Destroy</a></td>
+      </tr>
+ <% end %>
+   </tablebody>
+
+
+
+ <h3>New book</h3>
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>errors prohibited this book from being saved:
+  <%= @book.errors.count %>errors prohibited this book from being saved:>
   <ul>
-      <% @book.errors.full_massages.each do |message| %>
+      <% @book.errors.full_messages.each do |message| %>
        <li><%= message %></li>
       <% end %>
   </ul>
  <% end %>
 
 
+    <!--<form class="new_book" id="new_book" action="/books" sccept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="9riw3eBgW4vEEfayGZtA2Usmazv3eBI3AzZGVnW8vnseng9o2gm5lnH8gmdEZYLPi/J41Hr90INi1pa9Zveo7w==" />-->
+      <%= form_with model: @books, url: '/books', method: :post do |f| %>
+        <h4>本のタイトル</h4>
+        <%= f.text_field :title %>
 
-<%= @books.each do |book| %>
+        <h4>感想</h4>
+        <%= f.text_area :body %>
 
-<h4>本のタイトル:</h4>
-<span><%= book.title %></span>
+        <%= f.submit 'Create Book' %>
+      <% end %>
+    <!--</form>-->
 
-<h4>感想:</h4>
-<span>
-  <%= link_to book.title, book_path(book.id) %>
-</span>
 
-<% end %>
+<!--</html>-->
