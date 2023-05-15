@@ -10,7 +10,7 @@
     <h1>Books</h1>
 
     <table>
-     <tablehead>
+      <tablehead>
        <tr>
          <th>本のタイトル</th>
          <th>感想</th>
@@ -22,7 +22,7 @@
       <tr>
         <tb>リーダブルコード</tb>
         <tb>より良いコードを書くためのシンプルで実践的なテクニック</tb>
-      </tr>
+        <tb><
 
       <tr>
         <tb>トラブル知らずのシステム設計</tb>
@@ -39,21 +39,32 @@
         <tb>gitについての基本操作から内部構造まで解説してくれます</tb>
       </tr>
 
+      <tr>
+        <tb>アルゴリズム図鑑</tb>
+        <tb>アルゴリズムについてカラーイラストでしっかり解説してくれます</tb>
+      </tr>
+
+      <tr>
+         <tb>達人プログラマー</tb>
+         <tb>プログラマ入門者は必読！</tb>
+      </tr>
+
+      <tr>
+         <tb>データベース実践入門</tb>
+         <tb>効率的なSQL文を教えてくれます</tb>
+      </tr>
       </tablebody>
     </table>
+
+    <form>
+        <p><h5>本のタイトル</h5></p>
+        <p><input type="text"></p>
+        <p><h5>感想</h5></p>
+        <p><textarea></textarea></p>
+        <p><input type="submit" value="Create Book"></p>
+    </form>
 
   </body>
 
 </html>
 
-
-
-<%= form_with model: @book, url: '/books', method: :post do |f| %>
-   <h4>本のタイトル</h4>
-   <%= f.text_field :title %>
-
-   <h4>感想</h4>
-   <%= f.text_field :body %>
-
-   <%= f.submit 'Create Book' %>
-  <% end %>
